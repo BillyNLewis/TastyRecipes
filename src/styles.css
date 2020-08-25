@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  background: linear-gradient(#2b5876, #4e4376) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: 'montseratt', sans-serif;
+}
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding: 1.5rem;
+  color: white;
+}
+/* searchBox section */
+.searchBox h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+.searchBox h2 {
+  font-size: 1.5rem;
+  color: #f7ede2;
+}
+.errorMessage {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 3rem;
+  color: #bde5f8;
+}
+.searchBox {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+.searchBox input {
+  width: 90%;
+  background-color: white;
+  border: 0px solid;
+  border-right: none;
+  padding: 5px;
+  height: 3rem;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.searchBox button {
+  height: 3rem;
+  width: 10%;
+  outline: none;
+  border: 0px solid #d3d3d3;
+  background: #d3d3d3;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+/* image section */
+.imageList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  color: white;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.imageCard {
+  background: rgba(105, 104, 104, 0.5); /* Black background with 0.5 opacity */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  padding-bottom: 0.5rem;
+}
+.imageCard img {
+  width: 100%;
+}
+.card-text {
+  padding: 0.3rem 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+.card-text h2 {
+  padding-bottom: 1rem;
+}
+
+/* footer */
+#footer {
+  /* relative to wrapper */
+  position: absolute;
+  color: black;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.637);
+  text-align: center;
+  font-size: 1.2rem;
+}
+/* Media Queries */
+
+/* tablet */
+@media (min-width: 768px) {
+  .imageList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .searchBox h1 {
+    font-size: 4rem;
+    text-align: left;
+  }
+  .searchBox h2 {
+    font-size: 3rem;
+  }
+  .searchBox input,
+  .searchBox button {
+    height: 5rem;
+    font-size: 2.5rem;
+  }
+  #footer {
+    font-size: 1.5rem;
+  }
+  .imageCard {
+    transition: 0.5s ease;
+    cursor: pointer;
+    margin: 0.6rem;
+  }
+  .imageCard:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+  }
+}
+/* desktop */
+@media (min-width: 992px) {
+  .imageList {
+    margin: 0 auto;
+    width: 90%;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .card-text h2 {
+    font-size: 2.2rem;
+  }
+  .card-text p {
+    font-size: 2rem;
+  }
+  #footer {
+    font-size: 1.7rem;
+  }
+}
