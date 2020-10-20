@@ -9,6 +9,7 @@ html {
   background-size: cover;
   position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body,
@@ -16,6 +17,7 @@ input,
 textarea,
 button {
   font-family: 'montseratt', sans-serif;
+  outline: none;
 }
 .websiteTitle {
   font-size: 2rem;
@@ -65,13 +67,11 @@ a:visited {
   padding: 5px;
   height: 3rem;
   border-radius: 5px 0 0 5px;
-  outline: none;
 }
 
 .searchBox button {
   height: 3rem;
   width: 10%;
-  outline: none;
   border: 0px solid;
   background: #3aa76d;
   text-align: center;
@@ -86,6 +86,7 @@ a:visited {
   color: white;
   gap: 1rem;
   margin-bottom: 2rem;
+  padding-bottom: 50px;
 }
 .imageCard {
   background: rgba(105, 104, 104, 0.5); /* Black background with 0.5 opacity */
@@ -138,6 +139,7 @@ a:visited {
 }
 .recipeImage {
   grid-area: recipeImage;
+  justify-self: end;
 }
 .recipeImage img {
   width: 100%;
@@ -145,6 +147,9 @@ a:visited {
 }
 .ingredients h2 {
   color: #3aa76d;
+}
+.ingredients p {
+  font-family: 'Indie Flower';
 }
 .ingredients {
   grid-area: ingredients;
@@ -269,9 +274,5 @@ a:visited {
   }
   #footer {
     font-size: 1.7rem;
-  }
-  /* recipe page */
-  .recipeImage {
-    place-self: center;
   }
 }

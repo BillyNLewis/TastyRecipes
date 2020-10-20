@@ -2,11 +2,13 @@ import React from 'react';
 import '../styles.css';
 import { v4 as uuidv4 } from 'uuid';
 import { useLocation, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function Recipe() {
   const location = useLocation();
   const {
-    // searchInput,
+    // destructuring searchInput(props),
+    foodHistory,
     foodImage,
     foodLabel,
     foodCal,
@@ -17,10 +19,36 @@ function Recipe() {
   } = location.state;
   const calPerServ = Math.round(foodCal / foodServing);
 
+  const containerVariants = {
+    hidden: {
+      x: '100vw'
+    },
+    visible: {
+      x: 0,
+      transition: { type: 'spring', stiffness: 120 }
+    },
+    exit: {
+      x: '-100vw'
+    }
+  };
+
   return (
-    <div className="wrapper">
+    <motion.div
+      className="wrapper container"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <div className="homeButton">
-        <Link to="/">
+        <Link
+          to={{
+            pathname: '/',
+            state: {
+              foodHistory: { foodHistory }
+            }
+          }}
+        >
           <button type="button">Home</button>
         </Link>
       </div>
@@ -59,7 +87,7 @@ function Recipe() {
       </section>
 
       <footer id="footer">Made by Billy N.Lewis</footer>
-    </div>
+    </motion.div>
   );
 }
 export default Recipe;
