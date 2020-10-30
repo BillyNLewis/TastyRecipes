@@ -52,7 +52,7 @@ function Home() {
       imgKey: !prev.imgKey
     }));
   }, []);
-
+  // function to fetch data from API
   function fetchData() {
     // handle empty input field
     if (searchInput === '') {
