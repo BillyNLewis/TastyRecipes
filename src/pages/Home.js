@@ -98,7 +98,7 @@ function Home() {
       {/* search box section */}
       <section className="searchBox">
         <h2>Discover thousands of expert-tested recipes!</h2>
-        <form>
+        <form action=".">
           <input
             //  type="search" adds a clear button inside of text box
             type="search"
