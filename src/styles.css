@@ -263,7 +263,7 @@ a:visited {
 @media (min-width: 992px) {
   .imageList {
     margin: 0 auto;
-    width: 90%;
+    max-width: 1300px;
     grid-template-columns: repeat(5, 1fr);
   }
   .card-text h2 {
