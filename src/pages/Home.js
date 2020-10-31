@@ -135,7 +135,7 @@ function Home() {
                 to={{
                   pathname: '/recipe',
                   state: {
-                    //   searchInput [passing array of obj to another component],
+                    // searchInput [passing array of obj to another component],
                     foodHistory: recipe.info,
                     foodImage: item.recipe.image,
                     foodLabel: item.recipe.label,

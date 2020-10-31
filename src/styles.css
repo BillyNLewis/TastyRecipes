@@ -58,25 +58,37 @@ a:visited {
   gap: 1rem;
   padding-bottom: 2rem;
 }
-
+/* prevent broswer from overwriting input css styles */
+input[type=search] { 
+  -webkit-appearance: none;
+}
+/* disable auto zoom in input tags */
+input[type='text'],
+input[type='number']{
+  font-size: 16px;
+}
 .searchBox input {
+  /* prevent mobile from overriding X button functionality */
+  -webkit-appearance: none;
+  font-size: 16px;
   width: 90%;
   background-color: white;
   border: 0px solid;
   border-right: none;
-  padding: 5px;
-  height: 3rem;
-  /* border-radius: 5px 0 0 5px; */
+  height: 4.5rem;
+  padding-left: 15px;
+  border-radius: 5px 0 0 5px;
 }
 
 .searchBox button {
-  height: 3rem;
+  font-size: 16px;
+  height: 4.5rem;
   width: 10%;
   border: 0px solid;
   background: #3aa76d;
   text-align: center;
   color: #fff;
-  /* border-radius: 0 5px 5px 0; */
+  border-radius: 0 5px 5px 0;
   cursor: pointer;
 }
 /* image section */
