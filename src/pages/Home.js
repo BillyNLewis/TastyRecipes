@@ -58,6 +58,7 @@ function Home() {
     if (searchInput === '') {
       setCheckInput(false);
     } else {
+      setCheckInput(true);
       const appID = '8dd6cb24';
       const appKey = 'cc5fc71652b6d09b2f1bb6842575a079';
       fetch(
@@ -111,12 +112,19 @@ function Home() {
           <button type="button" onClick={fetchData}>
             <FontAwesomeIcon icon={faSearch} />
           </button>
+          {/* form validation */}
           {checkInput ? null : (
             <p className="errorMessage">Please enter something to cook </p>
           )}
           {recipe.error ? <p>{recipe.error.message}</p> : null}
+          {recipe.info && recipe.info.length === 0 ? (
+            <p className="errorMessage">
+              Invalid search. Try searching for something else instead
+            </p>
+          ) : null}
         </form>
       </section>
+      {/* handle error message */}
 
       {/* image section */}
       {recipe.info && (
