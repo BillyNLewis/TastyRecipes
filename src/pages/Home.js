@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import '../styles.css';
 import { motion } from 'framer-motion';
 
+require('dotenv').config();
+
 const containerVariants = {
   hidden: {
     opacity: 0
@@ -59,11 +61,10 @@ function Home() {
       setCheckInput(false);
     } else {
       setCheckInput(true);
-      const appID = '8dd6cb24';
-      const appKey = 'cc5fc71652b6d09b2f1bb6842575a079';
+      const appID = process.env.REACT_APP_API_AppID;
+      const appKey = process.env.REACT_APP_API_AppKey;
       fetch(
         `https://api.edamam.com/search?q=${searchInput}&app_id=${appID}&app_key=${appKey}`
-        // https://api.edamam.com/search?q=steak&app_id=8dd6cb24&app_key=cc5fc71652b6d09b2f1bb6842575a079
       )
         .then((response) => {
           if (response.ok) {
